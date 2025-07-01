@@ -31,7 +31,7 @@ class _JobSeekerScreenState extends State<JobSeekerScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse('https://backend-findjob.onrender.com/user/registerPoster'),
+        Uri.parse('https://backend-jobnest.onrender.com/user/registerPoster'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
           'name': nameController.text,

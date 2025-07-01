@@ -37,7 +37,7 @@ class _UserManagementPageState extends State<UserManagementPage> {
   Future<void> fetchUsers() async {
     try {
       final response = await http
-          .get(Uri.parse('https://backend-findjob.onrender.com/user'));
+          .get(Uri.parse('https://backend-jobnest.onrender.com/user'));
       if (response.statusCode == 200) {
         setState(() {
           users = json.decode(response.body);
@@ -51,7 +51,7 @@ class _UserManagementPageState extends State<UserManagementPage> {
   Future<void> fetchCompanies() async {
     try {
       final response = await http
-          .get(Uri.parse('https://backend-findjob.onrender.com/company'));
+          .get(Uri.parse('https://backend-jobnest.onrender.com/company'));
       if (response.statusCode == 200) {
         setState(() {
           companies = json.decode(response.body);
@@ -67,7 +67,7 @@ class _UserManagementPageState extends State<UserManagementPage> {
       _formKey.currentState!.save();
       try {
         final response = await http.post(
-          Uri.parse('https://backend-findjob.onrender.com/user/add/'),
+          Uri.parse('https://backend-jobnest.onrender.com/user/add/'),
           headers: {'Content-Type': 'application/json'},
           body: json.encode(_formData),
         );
@@ -101,7 +101,7 @@ class _UserManagementPageState extends State<UserManagementPage> {
         String body = json.encode(_formData);
 
         await http.put(
-          Uri.parse('https://backend-findjob.onrender.com/user/$userId'),
+          Uri.parse('https://backend-jobnest.onrender.com/user/$userId'),
           headers: headers,
           body: body,
         );
@@ -115,7 +115,7 @@ class _UserManagementPageState extends State<UserManagementPage> {
   Future<void> deleteUser(String userId) async {
     try {
       await http.delete(
-          Uri.parse('https://backend-findjob.onrender.com/user/$userId'));
+          Uri.parse('https://backend-jobnest.onrender.com/user/$userId'));
       fetchUsers();
     } catch (e) {
       print(e);

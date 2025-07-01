@@ -59,7 +59,7 @@ class _AccoutScreenState extends State<AccoutScreen> {
     String? userId = prefs.getString('id');
     if (userId != null) {
       final response = await http.put(
-        Uri.parse('https://backend-findjob.onrender.com/user/$userId'),
+        Uri.parse('https://backend-jobnest.onrender.com/user/$userId'),
         headers: {
           'Content-Type': 'application/json',
         },

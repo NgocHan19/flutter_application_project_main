@@ -31,12 +31,12 @@ class _AdminDashboardState extends State<AdminDashboard> {
   Future<void> fetchStats() async {
     try {
       final responses = await Future.wait([
-        http.get(Uri.parse('https://backend-findjob.onrender.com/user/count')),
+        http.get(Uri.parse('https://backend-jobnest.onrender.com/user/count')),
         http.get(
-            Uri.parse('https://backend-findjob.onrender.com/company/count')),
-        http.get(Uri.parse('https://backend-findjob.onrender.com/job/count')),
+            Uri.parse('https://backend-jobnest.onrender.com/company/count')),
+        http.get(Uri.parse('https://backend-jobnest.onrender.com/job/count')),
         http.get(Uri.parse(
-            'https://backend-findjob.onrender.com/application/count')),
+            'https://backend-jobnest.onrender.com/application/count')),
       ]);
 
       if (responses.every((response) => response.statusCode == 200)) {

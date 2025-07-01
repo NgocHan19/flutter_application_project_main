@@ -11,7 +11,7 @@ class CategoryScreen extends StatefulWidget {
 }
 
 class _CategoryScreenState extends State<CategoryScreen> {
-  final String baseUrl = "https://backend-findjob.onrender.com/category";
+  final String baseUrl = "https://backend-jobnest.onrender.com/category";
   List categories = [];
   bool isLoading = true;
 

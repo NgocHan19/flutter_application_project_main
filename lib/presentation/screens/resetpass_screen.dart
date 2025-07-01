@@ -36,7 +36,7 @@ class _ResetPassScreenState extends State<ResetPassScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse('https://backend-findjob.onrender.com/user/verifyResetCode/'),
+        Uri.parse('https://backend-jobnest.onrender.com/user/verifyResetCode/'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
           'email': email,

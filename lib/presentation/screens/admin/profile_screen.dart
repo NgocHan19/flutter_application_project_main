@@ -33,7 +33,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
     try {
       final response = await http
-          .get(Uri.parse('https://backend-findjob.onrender.com/profile'));
+          .get(Uri.parse('https://backend-jobnest.onrender.com/profile'));
 
       if (response.statusCode == 200) {
         List<dynamic> data = json.decode(response.body);
@@ -172,7 +172,7 @@ class _ProfileDetailScreenState extends State<ProfileDetailScreen> {
   Future<Map<String, dynamic>> fetchProfileData() async {
     try {
       final response = await http.get(Uri.parse(
-          'https://backend-findjob.onrender.com/profile/${widget.userId}'));
+          'https://backend-jobnest.onrender.com/profile/${widget.userId}'));
 
       if (response.statusCode == 200) {
         Map<String, dynamic> data = json.decode(response.body);
@@ -195,7 +195,7 @@ class _ProfileDetailScreenState extends State<ProfileDetailScreen> {
 
     final response = await http.put(
       Uri.parse(
-          'https://backend-findjob.onrender.com/profile/${widget.userId}'),
+          'https://backend-jobnest.onrender.com/profile/${widget.userId}'),
       headers: {
         'Content-Type': 'application/json',
       },

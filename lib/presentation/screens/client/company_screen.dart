@@ -32,7 +32,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
   Future<void> fetchCompanies() async {
     try {
       final response = await http
-          .get(Uri.parse('https://backend-findjob.onrender.com/company/'));
+          .get(Uri.parse('https://backend-jobnest.onrender.com/company/'));
       if (response.statusCode == 200) {
         setState(() {
           companyList = json.decode(response.body);
@@ -56,7 +56,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
 
     try {
       final response = await http.get(Uri.parse(
-          'https://backend-findjob.onrender.com/job/count-by-company/$companyId'));
+          'https://backend-jobnest.onrender.com/job/count-by-company/$companyId'));
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         final jobCount = data['jobCount'] ?? 0;

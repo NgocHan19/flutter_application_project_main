@@ -34,7 +34,7 @@ class _ApplicationPageState extends State<ApplicationPage> {
 
   Future<void> fetchApplications() async {
     final response = await http
-        .get(Uri.parse('https://backend-findjob.onrender.com/application'));
+        .get(Uri.parse('https://backend-jobnest.onrender.com/application'));
     if (response.statusCode == 200) {
       setState(() {
         applications = json.decode(response.body);
@@ -44,7 +44,7 @@ class _ApplicationPageState extends State<ApplicationPage> {
 
   Future<void> fetchUsers() async {
     final response =
-        await http.get(Uri.parse('https://backend-findjob.onrender.com/user'));
+        await http.get(Uri.parse('https://backend-jobnest.onrender.com/user'));
     if (response.statusCode == 200) {
       setState(() {
         users = json.decode(response.body);
@@ -54,7 +54,7 @@ class _ApplicationPageState extends State<ApplicationPage> {
 
   Future<void> fetchJobs() async {
     final response =
-        await http.get(Uri.parse('https://backend-findjob.onrender.com/job'));
+        await http.get(Uri.parse('https://backend-jobnest.onrender.com/job'));
     if (response.statusCode == 200) {
       setState(() {
         jobs = json.decode(response.body);
@@ -64,7 +64,7 @@ class _ApplicationPageState extends State<ApplicationPage> {
 
   Future<void> fetchProfiles() async {
     final response = await http
-        .get(Uri.parse('https://backend-findjob.onrender.com/profile'));
+        .get(Uri.parse('https://backend-jobnest.onrender.com/profile'));
     if (response.statusCode == 200) {
       setState(() {
         profiles = json.decode(response.body);
@@ -74,7 +74,7 @@ class _ApplicationPageState extends State<ApplicationPage> {
 
   Future<void> deleteApplication(String id) async {
     final response = await http.delete(
-        Uri.parse('https://backend-findjob.onrender.com/application/$id'));
+        Uri.parse('https://backend-jobnest.onrender.com/application/$id'));
     if (response.statusCode == 200) {
       fetchApplications();
     }
@@ -106,8 +106,8 @@ class _ApplicationPageState extends State<ApplicationPage> {
       }
 
       final url = id == null
-          ? 'https://backend-findjob.onrender.com/application'
-          : 'https://backend-findjob.onrender.com/application/$id';
+          ? 'https://backend-jobnest.onrender.com/application'
+          : 'https://backend-jobnest.onrender.com/application/$id';
       final method = id == null ? 'POST' : 'PUT';
 
       try {

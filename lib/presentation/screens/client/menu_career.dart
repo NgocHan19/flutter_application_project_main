@@ -27,7 +27,7 @@ class _MenuCareerState extends State<MenuCareer> {
 
   Future<void> fetchCareers() async {
     final response = await http
-        .get(Uri.parse('https://backend-findjob.onrender.com/category/'));
+        .get(Uri.parse('https://backend-jobnest.onrender.com/category/'));
 
     if (response.statusCode == 200) {
       setState(() {

@@ -25,7 +25,7 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse('https://backend-findjob.onrender.com/user/forgotPassword/'),
+        Uri.parse('https://backend-jobnest.onrender.com/user/forgotPassword/'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({'email': email}),
       );

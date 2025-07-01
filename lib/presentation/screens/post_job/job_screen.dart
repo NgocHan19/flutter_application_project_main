@@ -55,7 +55,7 @@ class _JobListPageState extends State<JobListPage> {
   Future<void> _fetchJobs(String userId) async {
     try {
       final response = await http.get(
-          Uri.parse('https://backend-findjob.onrender.com/job/user/$userId'));
+          Uri.parse('https://backend-jobnest.onrender.com/job/user/$userId'));
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
         if (data.isNotEmpty) {
@@ -87,7 +87,7 @@ class _JobListPageState extends State<JobListPage> {
   Future<void> _fetchCategories() async {
     try {
       final response = await http
-          .get(Uri.parse('https://backend-findjob.onrender.com/category'));
+          .get(Uri.parse('https://backend-jobnest.onrender.com/category'));
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
         setState(() {
@@ -108,7 +108,7 @@ class _JobListPageState extends State<JobListPage> {
   Future<void> _fetchBenefits() async {
     try {
       final response = await http
-          .get(Uri.parse('https://backend-findjob.onrender.com/benefit'));
+          .get(Uri.parse('https://backend-jobnest.onrender.com/benefit'));
       if (response.statusCode == 200) {
         final List<dynamic> data = json.decode(response.body);
         setState(() {
@@ -166,7 +166,7 @@ class _JobListPageState extends State<JobListPage> {
 
     try {
       final response = await http.post(
-        Uri.parse('https://backend-findjob.onrender.com/job'),
+        Uri.parse('https://backend-jobnest.onrender.com/job'),
         body: json.encode(jobData),
         headers: {'Content-Type': 'application/json'},
       );

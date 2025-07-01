@@ -28,7 +28,7 @@ class _CompanyDetailScreenState extends State<CompanyDetailScreen> {
   Future<void> fetchJobs() async {
     try {
       final response = await http.get(Uri.parse(
-          'https://backend-findjob.onrender.com/job/company/${widget.company['_id']}'));
+          'https://backend-jobnest.onrender.com/job/company/${widget.company['_id']}'));
       if (response.statusCode == 200) {
         setState(() {
           jobs = jsonDecode(response.body);
