@@ -34,7 +34,7 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
       }
 
       final url = Uri.parse(
-          'https://backend-findjob.onrender.com/company/user/$userId');
+          'https://backend-jobnest.onrender.com/company/user/$userId');
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
@@ -105,7 +105,7 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
       if (userId == null) return;
 
       final url = Uri.parse(
-          'https://backend-findjob.onrender.com/company/${companyData!['_id']}');
+          'https://backend-jobnest.onrender.com/company/${companyData!['_id']}');
       final response = await http.put(url,
           body: json.encode({
             "nameCompany": companyData!['nameCompany'],

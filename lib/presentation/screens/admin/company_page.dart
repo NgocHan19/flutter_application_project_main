@@ -28,7 +28,7 @@ class _CompanyPageState extends State<CompanyPage> {
 
   Future<void> fetchCompanies() async {
     final response = await http
-        .get(Uri.parse('https://backend-findjob.onrender.com/company'));
+        .get(Uri.parse('https://backend-jobnest.onrender.com/company'));
     if (response.statusCode == 200) {
       setState(() {
         companies = json.decode(response.body);
@@ -38,7 +38,7 @@ class _CompanyPageState extends State<CompanyPage> {
 
   Future<void> fetchUsers() async {
     final response =
-        await http.get(Uri.parse('https://backend-findjob.onrender.com/user'));
+        await http.get(Uri.parse('https://backend-jobnest.onrender.com/user'));
     if (response.statusCode == 200) {
       setState(() {
         users = json.decode(response.body);
@@ -49,8 +49,8 @@ class _CompanyPageState extends State<CompanyPage> {
   Future<void> addOrUpdateCompany(String? id) async {
     if (_formKey.currentState!.validate()) {
       final url = id == null
-          ? 'https://backend-findjob.onrender.com/company'
-          : 'https://backend-findjob.onrender.com/company/$id';
+          ? 'https://backend-jobnest.onrender.com/company'
+          : 'https://backend-jobnest.onrender.com/company/$id';
       final method = id == null ? 'POST' : 'PUT';
 
       final response = await http.Request(method, Uri.parse(url))
@@ -75,7 +75,7 @@ class _CompanyPageState extends State<CompanyPage> {
 
   Future<void> deleteCompany(String id) async {
     final response = await http
-        .delete(Uri.parse('https://backend-findjob.onrender.com/company/$id'));
+        .delete(Uri.parse('https://backend-jobnest.onrender.com/company/$id'));
     if (response.statusCode == 200) {
       fetchCompanies();
     }

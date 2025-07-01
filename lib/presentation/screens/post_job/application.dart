@@ -30,7 +30,7 @@ class _JobApplicationPageState extends State<JobApplicationPage> {
     if (userId == null) return [];
 
     final response = await http.get(
-      Uri.parse('https://backend-findjob.onrender.com/job/user/$userId'),
+      Uri.parse('https://backend-jobnest.onrender.com/job/user/$userId'),
     );
 
     if (response.statusCode == 200) {
@@ -42,7 +42,7 @@ class _JobApplicationPageState extends State<JobApplicationPage> {
 
   Future<List<dynamic>> fetchApplications(String jobId) async {
     final response = await http.get(
-      Uri.parse('https://backend-findjob.onrender.com/application/job/$jobId'),
+      Uri.parse('https://backend-jobnest.onrender.com/application/job/$jobId'),
     );
 
     if (response.statusCode == 200) {
@@ -218,7 +218,7 @@ class _JobApplicationPageState extends State<JobApplicationPage> {
                         GestureDetector(
                           onTap: () {
                             final cvUrl =
-                                'https://backend-findjob.onrender.com/${application['cv']}';
+                                'https://backend-jobnest.onrender.com/${application['cv']}';
                             launchUrl(Uri.parse(cvUrl));
                           },
                           child: Row(

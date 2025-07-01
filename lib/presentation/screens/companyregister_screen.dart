@@ -65,7 +65,7 @@ class _CompanyRegistrationScreenState extends State<CompanyRegistrationScreen> {
 
     var request = http.MultipartRequest(
       'POST',
-      Uri.parse('https://backend-findjob.onrender.com/company/'),
+      Uri.parse('https://backend-jobnest.onrender.com/company/'),
     );
 
     request.fields['nameCompany'] = _companyNameController.text;

@@ -8,7 +8,7 @@ class BenefitPage extends StatefulWidget {
 }
 
 class _BenefitPageState extends State<BenefitPage> {
-  final String baseUrl = 'https://backend-findjob.onrender.com/benefit';
+  final String baseUrl = 'https://backend-jobnest.onrender.com/benefit';
   List<dynamic> _benefits = [];
   bool _isLoading = true;
 

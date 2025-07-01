@@ -22,7 +22,7 @@ class _JobListScreenState extends State<JobListScreen> {
   Future<void> fetchJobs() async {
     try {
       final response =
-          await http.get(Uri.parse('https://backend-findjob.onrender.com/job'));
+          await http.get(Uri.parse('https://backend-jobnest.onrender.com/job'));
       if (response.statusCode == 200) {
         setState(() {
           jobs = json.decode(response.body);
@@ -44,7 +44,7 @@ class _JobListScreenState extends State<JobListScreen> {
   Future<void> deleteJob(String jobId) async {
     try {
       final response = await http
-          .delete(Uri.parse('https://backend-findjob.onrender.com/job/$jobId'));
+          .delete(Uri.parse('https://backend-jobnest.onrender.com/job/$jobId'));
       if (response.statusCode == 200) {
         setState(() {
           jobs.removeWhere((job) => job['_id'] == jobId);
@@ -72,7 +72,7 @@ class _JobListScreenState extends State<JobListScreen> {
 void openEditJobForm(String jobId) async {
   try {
     final response = await http
-        .get(Uri.parse('https://backend-findjob.onrender.com/job/$jobId'));
+        .get(Uri.parse('https://backend-jobnest.onrender.com/job/$jobId'));
     if (response.statusCode == 200) {
       final job = json.decode(response.body);
       showDialog(
@@ -225,10 +225,10 @@ class _AddJobFormDialogState extends State<AddJobFormDialog> {
   Future<void> fetchDropdownData() async {
     try {
       final responses = await Future.wait([
-        http.get(Uri.parse('https://backend-findjob.onrender.com/company')),
-        http.get(Uri.parse('https://backend-findjob.onrender.com/category')),
-        http.get(Uri.parse('https://backend-findjob.onrender.com/user')),
-        http.get(Uri.parse('https://backend-findjob.onrender.com/benefit')),
+        http.get(Uri.parse('https://backend-jobnest.onrender.com/company')),
+        http.get(Uri.parse('https://backend-jobnest.onrender.com/category')),
+        http.get(Uri.parse('https://backend-jobnest.onrender.com/user')),
+        http.get(Uri.parse('https://backend-jobnest.onrender.com/benefit')),
       ]);
 
       setState(() {
@@ -262,7 +262,7 @@ class _AddJobFormDialogState extends State<AddJobFormDialog> {
     try {
       print('Job Data: ${json.encode(jobData)}');
       final response = await http.post(
-        Uri.parse('https://backend-findjob.onrender.com/job'),
+        Uri.parse('https://backend-jobnest.onrender.com/job'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode(jobData),
       );
@@ -565,7 +565,7 @@ class _EditJobFormDialogState extends State<EditJobFormDialog> {
     try {
       final response = await http.put(
         Uri.parse(
-            'https://backend-findjob.onrender.com/job/${widget.job['_id']}'),
+            'https://backend-jobnest.onrender.com/job/${widget.job['_id']}'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode(jobData),
       );

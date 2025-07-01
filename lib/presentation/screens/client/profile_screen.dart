@@ -36,7 +36,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     try {
       final response = await http.get(
-          Uri.parse('https://backend-findjob.onrender.com/profile/$userId'));
+          Uri.parse('https://backend-jobnest.onrender.com/profile/$userId'));
 
       if (response.statusCode == 200) {
         Map<String, dynamic> data = json.decode(response.body);
@@ -74,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }
 
     final response = await http.put(
-      Uri.parse('https://backend-findjob.onrender.com/profile/$userId'),
+      Uri.parse('https://backend-jobnest.onrender.com/profile/$userId'),
       headers: {
         'Content-Type': 'application/json',
       },

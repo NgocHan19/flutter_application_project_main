@@ -45,7 +45,7 @@ class _CareerDetailState extends State<CareerDetail> {
 
     try {
       final response = await http.get(Uri.parse(
-          'https://backend-findjob.onrender.com/job/category/$categoryId'));
+          'https://backend-jobnest.onrender.com/job/category/$categoryId'));
 
       if (response.statusCode == 200) {
         final List<dynamic> decodedJobs = jsonDecode(response.body);
