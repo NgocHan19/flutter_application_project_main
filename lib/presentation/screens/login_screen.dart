@@ -139,7 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
               style: TextStyle(
                 fontSize: 39,
                 fontWeight: FontWeight.bold,
-                color: Colors.deepPurple,  // Đổi màu chữ thành deepPurple
+                color: Color(0xFFFFA726),
               ),
             ),
           ),
@@ -199,6 +199,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {
                         Navigator.pushNamed(context, '/forgetpassscreen');
                       },
+                        style: TextButton.styleFrom(
+                        foregroundColor: Color(0xFFFFA726), // Màu cam cho text
+                      ),
                       child: const Text('Quên mật khẩu')),
                 ],
               ),
@@ -212,6 +215,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {
                         Navigator.pushNamed(context, '/jobpath');
                       },
+                        style: TextButton.styleFrom(
+                        foregroundColor: Color(0xFFFFA726), // Màu cam cho text
+                      ),
                       child: const Text('Đăng ký')),
                 ],
               ),

@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_application_project_main/data/models/category.dart';
 
 class CategoryRepository {
-  final String apiUrl = 'https://backend-findjob.onrender.com/category';
+  final String apiUrl = 'https://backend-jobnest.onrender.com/category';
   Future<Category?> createCategory(
       String name, String description, String icon) async {
     try {

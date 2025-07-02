@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_application_project_main/data/models/application.dart';
 
 class ApplicationRepository {
-  final String apiUrl = 'https://backend-findjob.onrender.com/application';
+  final String apiUrl = 'https://backend-jobnest.onrender.com/application';
   Future<Application?> createApplication(
       Map<String, dynamic> applicationData) async {
     try {

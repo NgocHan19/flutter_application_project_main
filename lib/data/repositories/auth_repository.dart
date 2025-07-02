@@ -4,7 +4,7 @@ import 'package:flutter_application_project_main/data/models/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthRepository {
-  final String apiUrl = 'https://backend-findjob.onrender.com/user';
+  final String apiUrl = 'https://backend-jobnest.onrender.com/user';
 
   Future<User?> loginUser(String email, String password) async {
     try {

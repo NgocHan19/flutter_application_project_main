@@ -19,7 +19,7 @@ class _JobPathScreenState extends State<JobPathScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.purple),
+          icon: const Icon(Icons.arrow_back, color: Color(0xFFFFA726)),
           onPressed: () => Navigator.pop(context),
         ),
       ),
@@ -27,7 +27,7 @@ class _JobPathScreenState extends State<JobPathScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // Logo
-          Image.asset('assets/images/logo.png', width: 250),
+          Image.asset('assets/images/logo.png', width: 200),
           const SizedBox(height: 10),
           Text(
             "Bắt đầu ngay! Bạn muốn tìm việc hay đăng tuyển?",
@@ -79,40 +79,40 @@ class _JobPathScreenState extends State<JobPathScreen> {
           selectedRoute = route;
         });
       },
-      child: Container(
-        width: 170,
-        height: 240,
-        decoration: BoxDecoration(
-          border: Border.all(color: isSelected ? Colors.purple : Colors.grey.shade300),
-          borderRadius: BorderRadius.circular(10),
-          color: isSelected ? Colors.purple.shade50 : Colors.white,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 80,
-              height: 80,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 5,
-                    spreadRadius: 2,
-                  ),
-                ],
-              ),
-              child: Icon(icon, size: 45, color: isSelected ? Colors.purple : Colors.black),
+child: Container(
+  width: 170,
+  height: 240,
+  decoration: BoxDecoration(
+    border: Border.all(color: isSelected ? Color(0xFFFFA726) : Colors.grey.shade300),
+    borderRadius: BorderRadius.circular(10),
+    color: isSelected ? Color.fromARGB(255, 255, 240, 218) : Colors.white, // Cam nhạt cho nền
+  ),
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Container(
+        width: 80,
+        height: 80,
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 5,
+              spreadRadius: 2,
             ),
-            const SizedBox(height: 10),
-            Text(title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 5),
-            Text(subtitle, style: const TextStyle(fontSize: 12, color: Colors.black54), textAlign: TextAlign.center),
           ],
         ),
+        child: Icon(icon, size: 45, color: isSelected ? Color(0xFFFFA726) : Colors.black),
       ),
+      const SizedBox(height: 10),
+      Text(title, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+      const SizedBox(height: 5),
+      Text(subtitle, style: const TextStyle(fontSize: 12, color: Colors.black54), textAlign: TextAlign.center),
+    ],
+  ),
+),
     );
   }
 }
