@@ -5,7 +5,7 @@ import 'package:flutter_application_project_main/data/models/user.dart';
 class UserRepository {
   Future<User> fetchUserData(String userId, String token) async {
     final response = await http.get(
-      Uri.parse('https://backend-findjob.onrender.com/user/$userId'),
+      Uri.parse('https://backend-jobnest.onrender.com/user/$userId'),
       headers: {
         'Authorization': 'Bearer $token',
       },

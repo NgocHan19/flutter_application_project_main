@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_application_project/presentation/screens/login_screen.dart';
 import 'package:flutter_application_project_main/presentation/screens/login_screen.dart';
 
 class Hello extends StatelessWidget {
@@ -13,37 +12,38 @@ class Hello extends StatelessWidget {
         body: Stack(
           children: [
             Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/image.png"),
-                  fit: BoxFit.cover,
-                ),
+              color: const Color(0xFFFFE0B2),
+            ),
+            Align(
+              alignment: const Alignment(0, -1.6),
+              child: Image.asset(
+                "assets/images/intro.png",
+                width: 400,
+                fit: BoxFit.contain,
               ),
             ),
-            Container(
-              color: Colors.black.withOpacity(0.4),
-            ),
+
             Positioned(
-              bottom: 50,
+              bottom: 100,
               left: 20,
               right: 20,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Chào mừng đến với JobPath",
+                children: const [
+                  Text(
+                    "Chào mừng đến với Jobnest",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 28,
+                      color: Color(0xFFFFA726),
+                      fontSize: 32,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  const Text(
-                    "Tìm đúng việc – Chạm tới thành công!",
+                  SizedBox(height: 10),
+                  Text(
+                    "Sự nghiệp mới cùng ánh bình minh!",
                     style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 16,
+                      color: Color(0xFFFFA726),
+                      fontSize: 18,
                     ),
                   ),
                 ],
@@ -58,14 +58,15 @@ class Hello extends StatelessWidget {
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black26,
+                      color: Color(0xFFFFA726),
+
                       blurRadius: 10,
                       spreadRadius: 2,
                     ),
                   ],
                 ),
                 child: IconButton(
-                  icon: const Icon(Icons.arrow_forward, color: Colors.black, size: 30),
+                  icon: const Icon(Icons.arrow_forward, color: Color(0xFFFFA726), size: 30),
                   onPressed: () {
                     Navigator.push(
                       context,

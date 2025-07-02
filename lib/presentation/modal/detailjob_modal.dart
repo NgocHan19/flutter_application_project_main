@@ -66,7 +66,7 @@ class _ModalDetailScreenState extends State<ModalDetailScreen> {
       final base64File = base64Encode(fileBytes);
 
       final uri =
-          Uri.parse('https://backend-findjob.onrender.com/application/');
+          Uri.parse('https://backend-jobnest.onrender.com/application/');
 
       var request = http.MultipartRequest('POST', uri)
         ..headers.addAll({
@@ -108,7 +108,7 @@ class _ModalDetailScreenState extends State<ModalDetailScreen> {
       }
 
       final profileUrl =
-          Uri.parse('https://backend-findjob.onrender.com/profile/$userId');
+          Uri.parse('https://backend-jobnest.onrender.com/profile/$userId');
       final response = await http.get(profileUrl);
 
       if (response.statusCode == 200) {
