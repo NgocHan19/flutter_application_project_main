@@ -45,7 +45,7 @@ class AuthRepository {
         Uri.parse('$apiUrl/register'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
-          'email': email,
+          'email': email.trim(),
           'password': password,
           'name': name,
           'role': 'job_seeker',
