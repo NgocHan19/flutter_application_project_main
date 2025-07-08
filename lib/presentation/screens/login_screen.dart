@@ -64,7 +64,8 @@ class _LoginScreenState extends State<LoginScreen> {
         _showErrorDialog('Đăng nhập thất bại');
       }
     } catch (error) {
-      _showErrorDialog('Đăng nhập thất bại');
+       print("❌ Lỗi đăng nhập: $error");  // 👈 In lỗi thật ra console
+      _showErrorDialog('Đăng nhập thất bại: $error');
     } finally {
       setState(() => isLoading = false);
     }
