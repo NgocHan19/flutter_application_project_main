@@ -293,7 +293,7 @@ class _ModalDetailScreenState extends State<ModalDetailScreen> {
       ),
       maxLines: controller == coverLetterController
           ? 5
-          : 1, // Make the cover letter field multiline
+          : 1, 
     );
   }
 }

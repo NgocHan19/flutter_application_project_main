@@ -48,7 +48,7 @@ class EmployerHomePage extends StatelessWidget {
               SizedBox(height: 10),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepPurple,
+                  backgroundColor: Color(0xFFFFA726),
                   padding: EdgeInsets.symmetric(horizontal: 44, vertical: 12),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
@@ -134,7 +134,7 @@ class EmployerHomePage extends StatelessWidget {
           _knowledgeItem(
               "10 câu hỏi phỏng vấn giúp sáng lọc ứng viên tốt nhất"),
           ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.purple),
+            style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFFFA726)),
             onPressed: () {},
             child: Text("Xem tất cả", style: TextStyle(color: Colors.white)),
           ),
@@ -213,7 +213,7 @@ class EmployerHomePage extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(Icons.headset_mic, color: Colors.purple, size: 40),
+          Icon(Icons.headset_mic, color: Color(0xFFFFA726), size: 40),
           SizedBox(width: 10),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -253,7 +253,7 @@ class EmployerHomePage extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-                  color: Colors.purple,
+                  color: Color(0xFFFFA726),
                   fontWeight: FontWeight.bold,
                   fontSize: 16),
             ),

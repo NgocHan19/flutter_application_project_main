@@ -159,8 +159,8 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [
-              Color(0xFFB276EF), // Màu tím nhạt
-              Color(0xFF5A85F4), // Màu xanh dương
+              Color(0xFFFFA726), 
+              Color(0xFFFFA726),
             ],
           ),
         ),

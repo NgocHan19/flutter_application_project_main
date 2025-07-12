@@ -62,7 +62,7 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
         'certifications': certifications,
         'profileImage': profileImage != null
             ? base64Encode(profileImage!.readAsBytesSync())
-            : null, // Convert image to base64 if selected
+            : null,
       };
 
       var response = await http.post(
@@ -124,8 +124,8 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
           colors: [
-            Color(0xFFB276EF),
-            Color(0xFF5A85F4),
+            Color(0xFFFFA726),
+            Color(0xFFFFA726),
           ],
         ),
       ),
@@ -234,7 +234,7 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    backgroundColor: Colors.deepPurpleAccent,
+                    backgroundColor: Color(0xFFFFA726),
                   ),
                   child: Text(
                     'Tạo Hồ Sơ',
@@ -259,13 +259,13 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
           filled: true,
           fillColor: Colors.deepPurple[50],
-          labelStyle: TextStyle(color: Colors.deepPurple),
+          labelStyle: TextStyle(color: Color(0xFFFFA726)),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.deepPurple),
+            borderSide: BorderSide(color: Color(0xFFFFA726)),
             borderRadius: BorderRadius.circular(12),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.deepPurpleAccent, width: 2),
+            borderSide: BorderSide(color: Color(0xFFFFA726), width: 2),
             borderRadius: BorderRadius.circular(12),
           ),
         ),
@@ -281,7 +281,7 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
       child: Text(
         title,
         style: TextStyle(
-            fontSize: 20, fontWeight: FontWeight.bold, color: Colors.deepPurple),
+            fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFFFFA726)),
       ),
     );
   }
@@ -339,7 +339,7 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
-          backgroundColor: Colors.deepPurpleAccent,
+          backgroundColor: Color(0xFFFFA726),
         ),
         child: Text('Thêm $label', style: TextStyle(color: Colors.white)),
       ),

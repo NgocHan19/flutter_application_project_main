@@ -46,7 +46,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
       );
       if (response.statusCode == 200) {
         fetchCategories();
-        Fluttertoast.showToast(msg: "Thêm thành công");
+        Fluttertoast.showToast(msg: "Thêm thành công",);
       } else {
         Fluttertoast.showToast(msg: "Thêm thất bại");
       }
@@ -96,14 +96,14 @@ void showCategoryDialog({String? id, String? name, String? description}) {
     context: context,
     builder: (context) => AlertDialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15), // Rounded corners for the dialog
+        borderRadius: BorderRadius.circular(15),
       ),
       title: Text(
         id == null ? "Thêm danh mục" : "Chỉnh sửa danh mục",
         style: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 18,
-          color: Colors.deepPurple,
+          color: Color(0xFFFFA726),
         ),
       ),
       content: Padding(
@@ -112,16 +112,16 @@ void showCategoryDialog({String? id, String? name, String? description}) {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Tên danh mục (Làm rộng ra)
+            // Tên danh mục
             Container(
               width: double.infinity, // Chiếm toàn bộ chiều ngang của AlertDialog
               child: TextField(
                 controller: nameController,
                 decoration: InputDecoration(
                   labelText: "Tên danh mục",
-                  labelStyle: TextStyle(color: Colors.deepPurple),
+                  labelStyle: TextStyle(color: Color(0xFFFFA726)),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.deepPurple),
+                    borderSide: BorderSide(color: Color(0xFFFFA726)),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   enabledBorder: OutlineInputBorder(
@@ -133,17 +133,17 @@ void showCategoryDialog({String? id, String? name, String? description}) {
               ),
             ),
             const SizedBox(height: 15),
-            // Mô tả danh mục (Làm rộng ra)
+            // Mô tả danh mục 
             Container(
               width: double.infinity, // Chiếm toàn bộ chiều ngang của AlertDialog
               child: TextField(
                 controller: descriptionController,
-                maxLines: 5,  // Cho phép mô tả dài ra
+                maxLines: 5,  
                 decoration: InputDecoration(
                   labelText: "Mô tả",
-                  labelStyle: TextStyle(color: Colors.deepPurple),
+                  labelStyle: TextStyle(color: Color(0xFFFFA726)),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.deepPurple),
+                    borderSide: BorderSide(color: Color(0xFFFFA726)),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   enabledBorder: OutlineInputBorder(
@@ -184,7 +184,7 @@ void showCategoryDialog({String? id, String? name, String? description}) {
             Navigator.pop(context);
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.deepPurple,
+            backgroundColor: Color(0xFFFFA726),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
@@ -218,8 +218,8 @@ void showCategoryDialog({String? id, String? name, String? description}) {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [
-              Color(0xFFB276EF), // Màu tím nhạt
-              Color(0xFF5A85F4), // Màu xanh dương
+              Color(0xFFFFA726),
+              Color(0xFFFFA726),
             ],
           ),
         ),
@@ -276,7 +276,7 @@ void showCategoryDialog({String? id, String? name, String? description}) {
             ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showCategoryDialog(),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color(0xFFFFA726),
         child: const Icon(Icons.add, color: Colors.white),
       ),
     );

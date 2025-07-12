@@ -80,20 +80,20 @@ class _ProfilePageState extends State<ProfilePage> {
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [
-              Color(0xFFB276EF),
-              Color(0xFF5A85F4), 
+              Color(0xFFFFA726),
+              Color(0xFFFFA726), 
             ],
           ),
         ),
       ),
       backgroundColor: Colors.transparent,
       elevation: 0,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: navigateToCreateProfile,
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     icon: const Icon(Icons.add),
+        //     onPressed: navigateToCreateProfile,
+        //   ),
+        // ],
       ),
       body: FutureBuilder<List<Map<String, dynamic>>>(
         future: profileList,
@@ -140,6 +140,11 @@ class _ProfilePageState extends State<ProfilePage> {
           }
         },
       ),
+        floatingActionButton: FloatingActionButton(
+    onPressed: navigateToCreateProfile,
+    backgroundColor: Colors.orange,
+    child: const Icon(Icons.add),
+  ),
     );
   }
 }

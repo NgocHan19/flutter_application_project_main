@@ -76,8 +76,8 @@ class _JobApplicationPageState extends State<JobApplicationPage> {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [
-                Color(0xFFB276EF),
-                Color(0xFF5A85F4),
+                Color(0xFFFFA726),
+                Color(0xFFFFA726),
               ],
             ),
           ),

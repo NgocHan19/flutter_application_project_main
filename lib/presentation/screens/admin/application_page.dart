@@ -222,7 +222,7 @@ class _ApplicationPageState extends State<ApplicationPage> {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.deepPurple, 
+                  color: Color(0xFFFFA726), 
                 ),
               ),
                   SizedBox(height: 20),
@@ -336,7 +336,7 @@ class _ApplicationPageState extends State<ApplicationPage> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple, 
+                        color: Color(0xFFFFA726), 
                       ),
                     ),
                   ),
@@ -363,8 +363,8 @@ class _ApplicationPageState extends State<ApplicationPage> {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [
-                Color(0xFFB276EF), // Màu tím nhạt
-                Color(0xFF5A85F4), // Màu xanh dương
+                Color(0xFFFFA726), 
+                Color(0xFFFFA726), 
               ],
             ),
           ),
@@ -398,7 +398,7 @@ class _ApplicationPageState extends State<ApplicationPage> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           IconButton(
-                            icon: Icon(Icons.edit, color: Colors.deepPurple),
+                            icon: Icon(Icons.edit, color: Colors.black),
                             onPressed: () => showForm(application),
                           ),
                           IconButton(
@@ -414,7 +414,7 @@ class _ApplicationPageState extends State<ApplicationPage> {
               ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color(0xFFFFA726),
         onPressed: () => showForm(),
         child: Icon(
           Icons.add,

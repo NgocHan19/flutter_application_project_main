@@ -96,19 +96,34 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget _buildTextField(
-      TextEditingController controller, String hint, IconData icon,
-      {bool obscureText = false}) {
-    return TextField(
+Widget _buildTextField(
+  TextEditingController controller,
+  String label,
+  IconData icon, {
+  bool obscureText = false,
+}) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 8.0),
+    child: TextField(
       controller: controller,
       obscureText: obscureText,
+      cursorColor: Color(0xFFFFE0B2),
       decoration: InputDecoration(
-        prefixIcon: Icon(icon),
-        hintText: hint,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+        labelText: label,
+        labelStyle: TextStyle(color: Colors.grey),
+        prefixIcon: Icon(icon, color: Colors.blueGrey),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Color(0xFFFFCE86), width: 2),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey),
+          borderRadius: BorderRadius.circular(10),
+        ),
       ),
-    );
-  }
+    ),
+  );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -130,15 +145,16 @@ class _LoginScreenState extends State<LoginScreen> {
             Center(
               child: Image.asset(
                 'assets/images/logo.png',  
-                height: 150, 
-                width: 200,   
+                height: 200, 
+                width: 250,   
+                fit: BoxFit.cover,
               ),
             ),
             Center(
             child: Text(
               'Đăng nhập',
               style: TextStyle(
-                fontSize: 39,
+                fontSize: 38,
                 fontWeight: FontWeight.bold,
                 color: Color(0xFFFFA726),
               ),
@@ -201,7 +217,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushNamed(context, '/forgetpassscreen');
                       },
                         style: TextButton.styleFrom(
-                        foregroundColor: Color(0xFFFFA726), // Màu cam cho text
+                        foregroundColor: Color(0xFFFFA726),
                       ),
                       child: const Text('Quên mật khẩu')),
                 ],
@@ -217,7 +233,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushNamed(context, '/jobpath');
                       },
                         style: TextButton.styleFrom(
-                        foregroundColor: Color(0xFFFFA726), // Màu cam cho text
+                        foregroundColor: Color(0xFFFFA726),
                       ),
                       child: const Text('Đăng ký')),
                 ],

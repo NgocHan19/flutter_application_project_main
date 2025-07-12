@@ -69,7 +69,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildHeader(),
-            SizedBox(height: 20),
+            SizedBox(height: 40),
             _buildStatisticsGrid(),
             SizedBox(height: 20),
             _buildCategoryTitle("Danh mục"),
@@ -82,37 +82,47 @@ class _AdminDashboardState extends State<AdminDashboard> {
     );
   }
 
-  Widget _buildHeader() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Colors.purple, Colors.deepPurple],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(45),
-          bottomRight: Radius.circular(45),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(height: 20),
-          Text("Xin chào!",
-              style: TextStyle(color: Colors.white, fontSize: 18)),
-          Text(
-            "Việt Thắng",
-            style: TextStyle(
-                color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+Widget _buildHeader() {
+  return Stack(
+    clipBehavior: Clip.none,
+    children: [
+      Container(
+        width: double.infinity,
+        height: 120,
+        decoration: BoxDecoration(
+          color: Color(0xFFFFA726),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(45),
+            bottomRight: Radius.circular(45),
           ),
-          SizedBox(height: 20),
-          _buildSearchBar(),
-        ],
+        ),
+        padding: EdgeInsets.only(left: 35, top: 10, right: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Xin chào !", style: TextStyle(color: Colors.white, fontSize: 20)),
+            SizedBox(height: 5),
+            Text(
+              "Yuki",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
       ),
-    );
-  }
+      Positioned(
+        left: 35,
+        right: 35,
+        bottom: -20, // tạo hiệu ứng nổi
+        child: _buildSearchBar(),
+      )
+    ],
+  );
+}
+
 
   // 🔍 Thanh tìm kiếm
   Widget _buildSearchBar() {
@@ -127,7 +137,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
       padding: EdgeInsets.symmetric(horizontal: 20),
       child: TextField(
         decoration: InputDecoration(
-          hintText: "Tìm kiếm công việc ......",
+          hintText: "Tìm kiếm công việc ...",
           border: InputBorder.none,
           icon: Icon(Icons.search, color: Colors.grey),
         ),
@@ -138,18 +148,19 @@ class _AdminDashboardState extends State<AdminDashboard> {
   // 📊 Thống kê số liệu
   Widget _buildStatisticsGrid() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: 12),
       child: GridView.count(
         crossAxisCount: 2,
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
+        childAspectRatio: 1,
         children: [
-          _buildStatCard(usersCount.toString(), "Người dùng", Color(0xFF9B5DE5)),
-          _buildStatCard(jobsCount.toString(), "Công việc", Color(0xFFF15BB5)),
-          _buildStatCard(companiesCount.toString(), "Công ty", Color(0xFF00BBF9)), 
-          _buildStatCard(applicationsCount.toString(), "Đơn ứng tuyển", Color(0xFF00F5D4)), // Xanh ngọc
+          _buildStatCard(usersCount.toString(), "Tài khoản", Color(0xFF64B5F6)),
+          _buildStatCard(jobsCount.toString(), "Ngành nghề", Color(0xFF81C784)),
+          _buildStatCard(companiesCount.toString(), "Công ty", Color(0xFFFFD54F)), 
+          _buildStatCard(applicationsCount.toString(), "Đơn ứng tuyển", Color(0xFFBA68C8)),
         ],
       ),
     );
@@ -169,7 +180,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                   fontSize: 24,
                   fontWeight: FontWeight.bold)),
           SizedBox(height: 5),
-          Text(title, style: TextStyle(color: Colors.white, fontSize: 14)),
+          Text(title, style: TextStyle(color: Colors.white, fontSize: 18)),
         ],
       ),
     );
@@ -184,7 +195,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
     );
   }
 
-  // 🏷 Thiết kế danh mục tối giản
+  // 🏷 Thiết kế danh mục
   Widget _buildCategoriesGrid() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20),
@@ -211,7 +222,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
       onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => page)),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white, // Màu nền trắng để đồng nhất
+          color: Colors.white,
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(2, 4)) // Bóng đổ nhẹ
@@ -224,7 +235,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
             CircleAvatar(
               backgroundColor: Colors.grey.shade200,
               radius: 25,
-              child: Icon(icon, color: Colors.deepPurple, size: 28),
+              child: Icon(icon, color: Color(0xFFFFA726), size: 28),
             ),
             SizedBox(height: 8),
             Text(title, textAlign: TextAlign.center, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.black87)),

@@ -314,7 +314,7 @@ class _FilterModalState extends State<FilterModal> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        foregroundColor: Colors.deepPurple,
+        foregroundColor: Color(0xFFFFA726),
         title: const Text(
           'Bộ lọc',
           style: TextStyle(
@@ -384,7 +384,7 @@ class _FilterModalState extends State<FilterModal> {
                   _salaryValue = value;
                 });
               },
-              activeColor: Colors.deepPurple,
+              activeColor: Color(0xFFFFA726),
               inactiveColor: Colors.grey.shade300,
             ),
 
@@ -488,7 +488,7 @@ class _FilterModalState extends State<FilterModal> {
                   },
                   child: Text(
                     "Đặt lại bộ lọc",
-                    style: TextStyle(color: Colors.deepPurple),
+                    style: TextStyle(color: Color(0xFFFFA726)),
                   ),
                 ),
                 ElevatedButton(
@@ -538,7 +538,7 @@ class _FilterButton extends StatelessWidget {
             color: isSelected ? Colors.white : Colors.black,
           ),
         ),
-        backgroundColor: isSelected ? Colors.deepPurple : Colors.grey.shade200,
+        backgroundColor: isSelected ? Color(0xFFFFA726) : Colors.grey.shade200,
       ),
     );
   }
@@ -560,7 +560,7 @@ class _CheckboxTile extends StatelessWidget {
     return CheckboxListTile(
       title: Text(label),
       value: value,
-      activeColor: Colors.deepPurple,
+      activeColor: Color(0xFFFFA726),
       onChanged: onChanged,
       controlAffinity: ListTileControlAffinity.leading,
     );

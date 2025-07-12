@@ -117,7 +117,7 @@ class _MenuCareerState extends State<MenuCareer> {
                     Icon(
                       getIcon(iconName),
                       size: 60.0,
-                      color: Colors.deepPurple,
+                      color: Color(0xFFFFA726),
                     ),
                     SizedBox(height: 10),
                     Text(

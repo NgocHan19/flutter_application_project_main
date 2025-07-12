@@ -70,17 +70,35 @@ class _JobSeekerScreenState extends State<JobSeekerScreen> {
     }
   }
 
-  Widget _buildTextField(TextEditingController controller, String label, IconData icon, {bool obscureText = false}) {
-    return TextField(
+Widget _buildTextField(
+  TextEditingController controller,
+  String label,
+  IconData icon, {
+  bool obscureText = false,
+}) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 8.0),
+    child: TextField(
       controller: controller,
       obscureText: obscureText,
+      cursorColor: Color(0xFFFFE0B2), 
       decoration: InputDecoration(
         labelText: label,
-        prefixIcon: Icon(icon),
-        border: OutlineInputBorder(),
+        labelStyle: TextStyle(color: Colors.grey),
+        prefixIcon: Icon(icon, color: Colors.blueGrey), 
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Color(0xFFFFE0B2), width: 2),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey),
+          borderRadius: BorderRadius.circular(10),
+        ),
       ),
-    );
-  }
+    ),
+  );
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +128,7 @@ class _JobSeekerScreenState extends State<JobSeekerScreen> {
                   style: TextStyle(
                     fontSize: 39,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Color(0xFFFFA726),
                   ),
                 ),
               ),
@@ -152,7 +170,7 @@ class _JobSeekerScreenState extends State<JobSeekerScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -161,7 +179,13 @@ class _JobSeekerScreenState extends State<JobSeekerScreen> {
                     onPressed: () {
                       Navigator.pushNamed(context, '/login');
                     },
-                    child: const Text('Đăng nhập'),
+                    child: const Text(
+                      'Đăng nhập',
+                      style: TextStyle(
+                        color: Color(0xFFFFA726),
+                        fontSize: 12,
+                      ),
+                    ),
                   ),
                 ],
               ),

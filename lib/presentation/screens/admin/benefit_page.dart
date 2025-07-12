@@ -88,14 +88,14 @@ class _BenefitPageState extends State<BenefitPage> {
     context: context,
     builder: (context) => AlertDialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15), // Rounded corners for the dialog
+        borderRadius: BorderRadius.circular(15),
       ),
       title: Text(
         isEdit ? 'Chỉnh sửa phúc lợi' : 'Thêm phúc lợi',
         style: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 18,
-          color: Colors.deepPurple,
+          color: Color(0xFFFFA726),
         ),
       ),
       content: Padding(
@@ -104,16 +104,16 @@ class _BenefitPageState extends State<BenefitPage> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Tên phúc lợi (Làm rộng ra)
+            // Tên phúc lợi 
             Container(
-              width: double.infinity, // Chiếm toàn bộ chiều ngang của AlertDialog
+              width: double.infinity, // Chiếm toàn bộ chiều ngang
               child: TextField(
                 controller: nameController,
                 decoration: InputDecoration(
                   labelText: 'Tên phúc lợi',
-                  labelStyle: TextStyle(color: Colors.deepPurple),
+                  labelStyle: TextStyle(color: Color(0xFFFFA726)),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.deepPurple),
+                    borderSide: BorderSide(color: Color(0xFFFFA726)),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   enabledBorder: OutlineInputBorder(
@@ -125,7 +125,7 @@ class _BenefitPageState extends State<BenefitPage> {
               ),
             ),
             const SizedBox(height: 15),
-            // Mô tả phúc lợi (Làm rộng ra)
+            // Mô tả phúc lợi 
             Container(
               width: double.infinity, // Chiếm toàn bộ chiều ngang của AlertDialog
               child: TextField(
@@ -133,9 +133,9 @@ class _BenefitPageState extends State<BenefitPage> {
                 maxLines: 5,  // Cho phép mô tả dài ra
                 decoration: InputDecoration(
                   labelText: 'Mô tả',
-                  labelStyle: TextStyle(color: Colors.deepPurple),
+                  labelStyle: TextStyle(color: Color(0xFFFFA726)),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.deepPurple),
+                    borderSide: BorderSide(color: Color(0xFFFFA726)),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   enabledBorder: OutlineInputBorder(
@@ -147,16 +147,16 @@ class _BenefitPageState extends State<BenefitPage> {
               ),
             ),
             const SizedBox(height: 15),
-            // Icon (Làm rộng ra)
+            // Icon 
             Container(
               width: double.infinity, // Chiếm toàn bộ chiều ngang của AlertDialog
               child: TextField(
                 controller: iconController,
                 decoration: InputDecoration(
                   labelText: 'Icon',
-                  labelStyle: TextStyle(color: Colors.deepPurple),
+                  labelStyle: TextStyle(color: Color(0xFFFFA726)),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.deepPurple),
+                    borderSide: BorderSide(color: Color(0xFFFFA726)),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   enabledBorder: OutlineInputBorder(
@@ -194,7 +194,7 @@ class _BenefitPageState extends State<BenefitPage> {
             _saveBenefit(benefitData, id: isEdit ? benefit['_id'] : null);
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.deepPurple,
+            backgroundColor: Color(0xFFFFA726),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
@@ -211,30 +211,31 @@ class _BenefitPageState extends State<BenefitPage> {
 }
 
 
-  IconData getIconForBenefit(String name) {
-    switch (name.toLowerCase()) {
-      case 'chế độ bảo hiểm':
-        return Icons.health_and_safety;
-      case 'chế độ thưởng':
-        return Icons.card_giftcard;
-      case 'phụ cấp nhà ở':
-        return Icons.home;
-      case 'đào tạo':
-        return Icons.school;
-      case 'chăm sóc sức khoẻ':
-        return Icons.local_hospital;
-      case 'du lịch':
-        return Icons.flight_takeoff;
-      case 'công việc ổn định':
-        return Icons.work;
-      case 'tăng lương':
-        return Icons.trending_up;
-      case 'nghỉ phép năm':
-        return Icons.beach_access;
-      default:
-        return Icons.help_outline;
-    }
+IconData getIconForBenefit(String name) {
+  switch (name.toLowerCase().trim()) {
+    case 'chế độ bảo hiểm':
+      return Icons.health_and_safety;
+    case 'chế độ thưởng':
+      return Icons.card_giftcard;
+    case 'phụ cấp nhà ở':
+      return Icons.home;
+    case 'đào tạo':
+      return Icons.school;
+    case 'chăm sóc sức khoẻ':
+      return Icons.local_hospital;
+    case 'du lịch':
+      return Icons.flight_takeoff;
+    case 'công việc ổn định':
+      return Icons.work;
+    case 'tăng lương':
+      return Icons.trending_up;
+    case 'nghỉ phép năm':
+      return Icons.beach_access;
+    default:
+      return Icons.help_outline;
   }
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -243,8 +244,8 @@ class _BenefitPageState extends State<BenefitPage> {
           title: Text(
             'Quản lý phúc lợi',
             style: TextStyle(
-              fontWeight: FontWeight.bold, // In đậm chữ
-              fontSize: 18, // Điều chỉnh kích thước chữ nếu cần
+              fontWeight: FontWeight.bold, 
+              fontSize: 18,
             ),
           ),
           centerTitle: true, // Căn giữa tiêu đề
@@ -254,8 +255,8 @@ class _BenefitPageState extends State<BenefitPage> {
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
                 colors: [
-                  Color(0xFFB276EF), 
-                  Color(0xFF5A85F4), 
+                  Color(0xFFFFA726), 
+                  Color(0xFFFFA726), 
                 ],
               ),
             ),
@@ -285,7 +286,7 @@ class _BenefitPageState extends State<BenefitPage> {
                               IconButton(
                                 icon: Icon(
                                   Icons.edit,
-                                  color: Colors.deepPurple, 
+                                  color: Colors.black, 
                                 ),
                                 onPressed: () => _showBenefitForm(benefit: benefit),
                               ),
@@ -305,9 +306,9 @@ class _BenefitPageState extends State<BenefitPage> {
         onPressed: () => _showBenefitForm(),
         child: Icon(
           Icons.add,
-          color: Colors.white, // Màu trắng cho biểu tượng
+          color: Colors.white,
         ),
-        backgroundColor: Colors.deepPurple, // Màu nền của nút là deepPurple
+        backgroundColor: Color(0xFFFFA726),
       ),
     );
   }

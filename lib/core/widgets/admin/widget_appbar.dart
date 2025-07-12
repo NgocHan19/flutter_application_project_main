@@ -19,7 +19,7 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget {
     flexibleSpace: Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.purple, Colors.deepPurple], 
+          colors: [Color(0xFFFFA726),Color(0xFFFFA726),],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -29,7 +29,7 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget {
       IconButton(
         icon: Icon(
           themeMode == ThemeMode.light ? Icons.dark_mode : Icons.light_mode,
-          color: Colors.black, // Adjust icon color
+          color: Colors.black,
         ),
         onPressed: toggleTheme,
       ),

@@ -230,7 +230,7 @@ class _AccoutScreenState extends State<AccoutScreen> {
                   },
                   style: TextButton.styleFrom(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
-                    foregroundColor: const Color.fromARGB(255, 163, 62, 252),
+                    foregroundColor: const Color(0xFFFFA726),
                   ),
                   child: Text(
                     isEditing ? "Xong" : "Chỉnh sửa",

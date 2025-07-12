@@ -4,6 +4,7 @@ import 'package:flutter_application_project_main/app.dart';
 import 'package:flutter_application_project_main/core/themes/primary_text.dart';
 import 'package:flutter_application_project_main/core/themes/primary_theme.dart';
 import 'package:flutter_application_project_main/core/widgets/client/widget_footer.dart';
+
 class ContactScreen extends StatefulWidget {
   const ContactScreen({Key? key}) : super(key: key);
   @override
@@ -11,26 +12,30 @@ class ContactScreen extends StatefulWidget {
 }
 
 class _ContactScreenState extends State<ContactScreen> {
-  @override
-Widget build(BuildContext context) {
-  final inheritedTheme = AppInheritedTheme.of(context);
+  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _phoneController = TextEditingController();
+  final _messageController = TextEditingController();
 
-  return Scaffold(
-    appBar: CustomAppBar(
-      themeMode: inheritedTheme!.themeMode,
-      toggleTheme: inheritedTheme.toggleTheme,
-    ),
-    body: SingleChildScrollView(
-      child: 
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding( 
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-            child:Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 16),
+  @override
+  Widget build(BuildContext context) {
+    final inheritedTheme = AppInheritedTheme.of(context);
+
+    return Scaffold(
+      appBar: CustomAppBar(
+        themeMode: inheritedTheme!.themeMode,
+        toggleTheme: inheritedTheme.toggleTheme,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 16),
                   Center(
                     child: Text(
                       "Liên hệ",
@@ -41,17 +46,10 @@ Widget build(BuildContext context) {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  _buildLabel('HỌ VÀ TÊN'),
-                  _buildTextField('Họ và Tên'),
-                  const SizedBox(height: 16),
-                  _buildLabel('EMAIL'),
-                  _buildTextField('Địa chỉ Email'),
-                  const SizedBox(height: 16),
-                  _buildLabel('SỐ ĐIỆN THOẠI'),
-                  _buildTextField('Số điện thoại'),
-                  const SizedBox(height: 16),
-                  _buildLabel('NỘI DUNG'),
-                  _buildTextField('Nhập nội dung...', maxLines: 4),
+                  _buildTextField(_nameController, 'HỌ VÀ TÊN', Icons.person),
+                  _buildTextField(_emailController, 'EMAIL', Icons.email),
+                  _buildTextField(_phoneController, 'SỐ ĐIỆN THOẠI', Icons.phone),
+                  _buildCustomQuestionField(),
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () {},
@@ -104,70 +102,160 @@ Widget build(BuildContext context) {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Wrap(
-                    spacing: 10,
-                    runSpacing: 10, 
-                    children: [
-                      _buildInfoCard(
-                        icon: Icons.home,
-                        title: 'Vị trí',
-                        content: 'Việt Nam',
-                      ),
-                      _buildInfoCard(
-                        icon: Icons.language,
-                        title: 'Thời gian làm việc',
-                        content: 'Giờ hành chính',
-                      ),
-                      _buildInfoCard(
-                        icon: Icons.email,
-                        title: 'Email',
-                        content: 'phamthianhthu6023789@gmail.com',
-                      ),
-                    ],
+                      spacing: 10,
+                      runSpacing: 10,
+                      children: [
+                        _buildInfoCard(
+                          icon: Icons.home,
+                          title: 'Vị trí',
+                          content: 'Việt Nam',
+                        ),
+                        _buildInfoCard(
+                          icon: Icons.language,
+                          title: 'Thời gian làm việc',
+                          content: 'Giờ hành chính',
+                        ),
+                        _buildInfoCard(
+                          icon: Icons.email,
+                          title: 'Email',
+                          content: 'tranngochan2004.vn@gmail.com',
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-            ],)
-          ),
-           SizedBox(
-            height: 330,
-            child: CustomFooter(),
-          ),
-        ],
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 330,
+              child: CustomFooter(),
+            ),
+          ],
+        ),
       ),
+    );
+  }
+
+  
+
+  Widget _buildTextField(
+    TextEditingController controller,
+    String label,
+    IconData icon, {
+    bool obscureText = false,
+    int maxLines = 1,
+    String? hintText,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: TextField(
+        controller: controller,
+        obscureText: obscureText,
+        maxLines: maxLines,
+        cursorColor: const Color(0xFFFFE0B2),
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
+          labelText: label,
+          hintText: hintText,
+          hintStyle: const TextStyle(color: Colors.black54),
+          labelStyle: const TextStyle(color: Colors.grey),
+          prefixIcon: Icon(icon, color: Colors.blueGrey),
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Color(0xFFFFCE86), width: 2),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Colors.black), 
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCustomQuestionField() {
+  return Padding(
+    padding: const EdgeInsets.symmetric(vertical: 8.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'CÂU HỎI',
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.grey,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: Color(0xFFFFCE86), width: 2),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Icon(Icons.message, color: Colors.blueGrey),
+              const SizedBox(width: 10),
+              Expanded(
+                child: TextField(
+                  controller: _messageController,
+                  maxLines: 4,
+                  cursorColor: Color(0xFFFFE0B2),
+                  decoration: const InputDecoration.collapsed(
+                    hintText: 'Câu hỏi của bạn là gì...',
+                    hintStyle: TextStyle(color: Colors.black54),
+                  ),
+                  style: const TextStyle(color: Colors.black),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     ),
   );
 }
 
-List<Widget> _buildFAQs() {
-  final faqs = [
-  {
-    "question": "Tên công ty của bạn là gì?",
-    "answer":
-        "Tên công ty của chúng tôi là XYZ, chuyên cung cấp các dịch vụ chất lượng cao trong lĩnh vực công nghệ thông tin và phần mềm.",
-  },
-  {
-    "question": "Cần trả bao nhiêu cho 3 tháng?",
-    "answer":
-        "Chi phí cho 3 tháng sử dụng dịch vụ của chúng tôi là 3 triệu đồng, bao gồm tất cả các dịch vụ hỗ trợ và bảo trì.",
-  },
-  {
-    "question": "Tôi có cần đăng ký không?",
-    "answer":
-        "Có, bạn cần đăng ký để sử dụng dịch vụ của chúng tôi. Quá trình đăng ký rất đơn giản và nhanh chóng.",
-  },
-  {
-    "question": "Tôi nên liên hệ ai khi cần hỗ trợ?",
-    "answer":
-        "Khi cần hỗ trợ, bạn có thể liên hệ với bộ phận hỗ trợ khách hàng qua email support@xyz.com hoặc gọi vào số điện thoại 0123456789.",
-  },
-];
 
+  List<Widget> _buildFAQs() {
+    final faqs = [
+      {
+        "question": "Tên công ty của bạn là gì?",
+        "answer":
+            "Tên công ty của chúng tôi là XYZ, chuyên cung cấp các dịch vụ chất lượng cao trong lĩnh vực công nghệ thông tin và phần mềm.",
+      },
+      {
+        "question": "Cần trả bao nhiêu cho 3 tháng?",
+        "answer":
+            "Chi phí cho 3 tháng sử dụng dịch vụ của chúng tôi là 3 triệu đồng, bao gồm tất cả các dịch vụ hỗ trợ và bảo trì.",
+      },
+      {
+        "question": "Tôi có cần đăng ký không?",
+        "answer":
+            "Có, bạn cần đăng ký để sử dụng dịch vụ của chúng tôi. Quá trình đăng ký rất đơn giản và nhanh chóng.",
+      },
+      {
+        "question": "Tôi nên liên hệ ai khi cần hỗ trợ?",
+        "answer":
+            "Khi cần hỗ trợ, bạn có thể liên hệ với bộ phận hỗ trợ khách hàng qua email support@xyz.com hoặc gọi vào số điện thoại 0123456789.",
+      },
+    ];
 
-  return faqs.map((faq) {
-    return buildQuestionSection(faq['question']!, faq['answer']!);
-  }).toList();
-}
+    return faqs.map((faq) {
+      return buildQuestionSection(faq['question']!, faq['answer']!);
+    }).toList();
+  }
 
-  Widget _buildInfoCard({required IconData icon, required String title, required String content}) {
+  Widget _buildInfoCard({
+    required IconData icon,
+    required String title,
+    required String content,
+  }) {
     return Expanded(
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -199,28 +287,6 @@ List<Widget> _buildFAQs() {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildLabel(String text) {
-    return Text(
-      text,
-      style: const TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 12,
-        color: Colors.grey,
-      ),
-    );
-  }
-
-  Widget _buildTextField(String hintText, {int maxLines = 1}) {
-    return TextField(
-      maxLines: maxLines,
-      decoration: InputDecoration(
-        hintText: hintText,
-        border: OutlineInputBorder(),
-        contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       ),
     );
   }

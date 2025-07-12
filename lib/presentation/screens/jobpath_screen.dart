@@ -85,7 +85,7 @@ child: Container(
   decoration: BoxDecoration(
     border: Border.all(color: isSelected ? Color(0xFFFFA726) : Colors.grey.shade300),
     borderRadius: BorderRadius.circular(10),
-    color: isSelected ? Color.fromARGB(255, 255, 240, 218) : Colors.white, // Cam nhạt cho nền
+    color: isSelected ? Color.fromARGB(255, 255, 240, 218) : Colors.white,
   ),
   child: Column(
     mainAxisAlignment: MainAxisAlignment.center,

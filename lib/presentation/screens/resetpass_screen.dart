@@ -153,6 +153,8 @@ class _ResetPassScreenState extends State<ResetPassScreen> {
       controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(
+        filled: true,
+        fillColor: Color(0xFFFFE0B2),
         prefixIcon: Icon(icon),
         hintText: hintText,
         border: OutlineInputBorder(

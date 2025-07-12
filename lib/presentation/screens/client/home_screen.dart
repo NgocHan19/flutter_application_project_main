@@ -109,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             children: const [
               Text(
-                '20 Tháng 1, 2018 *',
+                '10 Tháng 11, 2020 *',
                 style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Colors.grey),
               ),
               Text(
@@ -205,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
           width: 50,
           height: 2,
           child: DecoratedBox(
-            decoration: BoxDecoration(color: Color.fromARGB(255, 33, 58, 243)),
+            decoration: BoxDecoration(color: Color(0xFFFFA726)),
           ),
         ),
         SizedBox(height: 3.0),
@@ -213,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
           width: 80,
           height: 2,
           child: DecoratedBox(
-            decoration: BoxDecoration(color: Color.fromARGB(255, 33, 58, 243)),
+            decoration: BoxDecoration(color: Color(0xFFFFA726)),
           ),
         ),
       ],
@@ -227,12 +227,12 @@ class _HomeScreenState extends State<HomeScreen> {
           width: 20,
           height: 2,
           child: DecoratedBox(
-            decoration: BoxDecoration(color: Color.fromARGB(255, 33, 58, 243)),
+            decoration: BoxDecoration(color: Color(0xFFFFA726)),
           ),
         ),
         SizedBox(width: 8),
         Text(
-          'Anh Thu',
+          'Yuki',
           style: TextStyle(
             color: Colors.grey,
             fontSize: 12,
@@ -465,7 +465,7 @@ class FadeItem extends StatelessWidget {
                   height: 103,
                   child: DecoratedBox(
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 33, 58, 243),
+                      color: Color(0xFFFFA726),
                     ),
                   ),
                 ),

@@ -107,8 +107,8 @@ void openEditJobForm(String jobId) async {
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,
         colors: [
-          Color(0xFFB276EF), // Màu tím nhạt
-          Color(0xFF5A85F4), // Màu xanh dương
+          Color(0xFFFFA726),
+          Color(0xFFFFA726),
         ],
       ),
     ),
@@ -176,9 +176,9 @@ void openEditJobForm(String jobId) async {
         onPressed: openAddJobForm,
         child: const Icon(
           Icons.add,
-          color: Colors.white, // Set the icon color to white
+          color: Colors.white, 
         ),
-        backgroundColor: Colors.deepPurple, // Set the background color to deep purple
+        backgroundColor: Color(0xFFFFA726),
       ),
 
     );
@@ -298,7 +298,7 @@ class _AddJobFormDialogState extends State<AddJobFormDialog> {
       setState(() {
         selectedDeadline = picked;
         deadlineController.text =
-            "${picked.toLocal()}".split(' ')[0]; // Format date to YYYY-MM-DD
+            "${picked.toLocal()}".split(' ')[0];
       });
     }
   }
@@ -311,7 +311,7 @@ class _AddJobFormDialogState extends State<AddJobFormDialog> {
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,
-            color: Colors.deepPurple,
+            color: Color(0xFFFFA726),
           )),
       content: SingleChildScrollView(
         child: Column(
@@ -490,7 +490,7 @@ class _AddJobFormDialogState extends State<AddJobFormDialog> {
         ElevatedButton(
           onPressed: saveJob,
           style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.deepPurple,  
+          backgroundColor: Color(0xFFFFA726),  
           foregroundColor: Colors.white,     
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
@@ -591,7 +591,7 @@ class _EditJobFormDialogState extends State<EditJobFormDialog> {
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,
-            color: Colors.deepPurple,
+            color: Color(0xFFFFA726),
           )),
       content: SingleChildScrollView(
         child: Column(
@@ -688,7 +688,7 @@ class _EditJobFormDialogState extends State<EditJobFormDialog> {
     if (picked != null) {
       setState(() {
         deadlineController.text =
-            "${picked.toLocal()}".split(' ')[0]; // Format date to YYYY-MM-DD
+            "${picked.toLocal()}".split(' ')[0];
       });
     }
   }

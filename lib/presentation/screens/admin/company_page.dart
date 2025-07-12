@@ -120,7 +120,7 @@ class _CompanyPageState extends State<CompanyPage> {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,  // Màu văn bản deepPurple
+                    color: Color(0xFFFFA726),  
                   ),
                   textAlign: TextAlign.center,  // Căn giữa văn bản
                 ),
@@ -159,25 +159,25 @@ class _CompanyPageState extends State<CompanyPage> {
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(height: 15),
-                  DropdownButtonFormField<String>(
-                    value: selectedManagerId,
-                    decoration: InputDecoration(
-                      labelText: 'Quản Lý Bởi',
-                      border: OutlineInputBorder(),
-                    ),
-                    items: users.map((user) {
-                      return DropdownMenuItem(
-                        value: user['_id'].toString(),
-                        child: Text(user['name'] ?? ''),
-                      );
-                    }).toList(),
-                    onChanged: (value) {
-                      setState(() {
-                        selectedManagerId = value;
-                      });
-                    },
-                  ),
+                  // SizedBox(height: 15),
+                  // DropdownButtonFormField<String>(
+                  //   value: selectedManagerId,
+                  //   decoration: InputDecoration(
+                  //     labelText: 'Quản Lý Bởi',
+                  //     border: OutlineInputBorder(),
+                  //   ),
+                  //   items: users.map((user) {
+                  //     return DropdownMenuItem(
+                  //       value: user['_id'].toString(),
+                  //       child: Text(user['name'] ?? ''),
+                  //     );
+                  //   }).toList(),
+                  //   onChanged: (value) {
+                  //     setState(() {
+                  //       selectedManagerId = value;
+                  //     });
+                  //   },
+                  // ),
                   SizedBox(height: 15),
                   DropdownButtonFormField<String>(
                     value: selectedManagerId,
@@ -288,7 +288,7 @@ class _CompanyPageState extends State<CompanyPage> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: Colors.deepPurple,  
+                          color: Color(0xFFFFA726),  
                         ),
                       ),
                     ),
@@ -315,8 +315,8 @@ class _CompanyPageState extends State<CompanyPage> {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [
-                Color(0xFFB276EF), // Màu tím nhạt
-                Color(0xFF5A85F4), // Màu xanh dương
+                Color(0xFFFFA726),
+                Color(0xFFFFA726),
               ],
             ),
           ),
@@ -349,7 +349,7 @@ class _CompanyPageState extends State<CompanyPage> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           IconButton(
-                            icon: Icon(Icons.edit, color: Colors.deepPurple),
+                            icon: Icon(Icons.edit, color: Colors.black),
                             onPressed: () => showForm(company),
                           ),
                           IconButton(
@@ -364,7 +364,7 @@ class _CompanyPageState extends State<CompanyPage> {
               ),
       ),
       floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.deepPurple, 
+          backgroundColor: Color(0xFFFFA726), 
           onPressed: () => showForm(),
           child: Icon(
             Icons.add,

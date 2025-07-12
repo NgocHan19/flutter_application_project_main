@@ -149,7 +149,7 @@ class _UserManagementPageState extends State<UserManagementPage> {
           title: Text(
           user == null ? 'Thêm Người Dùng' : 'Chỉnh Sửa Người Dùng',
           style: TextStyle(
-            color: Colors.deepPurple, 
+            color: Color(0xFFFFA726), 
           ),
         ),
           content: Form(
@@ -184,6 +184,7 @@ class _UserManagementPageState extends State<UserManagementPage> {
                     decoration: InputDecoration(labelText: 'Số điện thoại'),
                     onSaved: (value) => _formData['phone'] = value ?? '',
                   ),
+                  SizedBox(height: 12),
                   DropdownButtonFormField<String>(
                     value: _formData['role'],
                     items: ['job_seeker', 'job_poster', 'admin']
@@ -196,6 +197,7 @@ class _UserManagementPageState extends State<UserManagementPage> {
                         setState(() => _formData['role'] = value),
                     decoration: InputDecoration(labelText: 'Vai trò'),
                   ),
+                  SizedBox(height: 12),
                   DropdownButtonFormField<String>(
                     value: _formData['status'],
                     items: ['active', 'suspended', 'deleted']
@@ -208,12 +210,15 @@ class _UserManagementPageState extends State<UserManagementPage> {
                         setState(() => _formData['status'] = value),
                     decoration: InputDecoration(labelText: 'Trạng thái'),
                   ),
-                  SwitchListTile(
-                    value: _formData['isVerified'] ?? false,
-                    title: Text('Đã xác thực'),
-                    onChanged: (value) =>
-                        setState(() => _formData['isVerified'] = value),
-                  ),
+                    Transform.scale(
+                      scale: 0.85,
+                      child: SwitchListTile(
+                        value: _formData['isVerified'] ?? false,
+                        title: Text('Đã xác thực'),
+                        onChanged: (value) =>
+                            setState(() => _formData['isVerified'] = value),
+                      ),
+                    ),
                   DropdownButtonFormField<String>(
                     value: selectedCompany,
                     items: companies.map<DropdownMenuItem<String>>((company) {
@@ -230,6 +235,7 @@ class _UserManagementPageState extends State<UserManagementPage> {
                     },
                     decoration: InputDecoration(labelText: 'Công ty'),
                   ),
+                  SizedBox(height: 20),
                   ElevatedButton.icon(
                     onPressed: pickImage,
                     icon: Icon(Icons.image),
@@ -286,8 +292,8 @@ class _UserManagementPageState extends State<UserManagementPage> {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [
-                Color(0xFFB276EF), // Màu tím nhạt
-                Color(0xFF5A85F4), // Màu xanh dương
+                Color(0xFFFFA726), 
+                Color(0xFFFFA726),
               ],
             ),
           ),
@@ -309,7 +315,7 @@ class _UserManagementPageState extends State<UserManagementPage> {
                   IconButton(
                     icon: Icon(
                       Icons.edit,
-                      color: Colors.deepPurple, 
+                      color: Colors.black, 
                     ),
                     onPressed: () => showUserForm(user: user),
                   ),
@@ -336,7 +342,7 @@ class _UserManagementPageState extends State<UserManagementPage> {
           Icons.add,
           color: Colors.white,  
         ),
-        backgroundColor: Colors.deepPurple,  
+        backgroundColor: Color(0xFFFFA726),  
       ),
     );
   }

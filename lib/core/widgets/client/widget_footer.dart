@@ -8,33 +8,38 @@ class CustomFooter extends StatelessWidget {
     return Container(
       color: const Color.fromARGB(255, 18, 17, 17),
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildAboutSection(),
-              const SizedBox(width: 16),
-              _buildListSection(
-                title: 'Menu',
-                items: ['About', 'Services', 'News', 'Careers'],
-              ),
-              const SizedBox(width: 16),
-              _buildListSection(
-                title: 'Categories',
-                items: ['Full Time', 'Freelance', 'Temporary', 'Internship'],
-              ),
-            ],
-          ),
-          const Divider(color: Colors.white38, height: 32),
-          const Text(
-            'Copyright © 2024 All Rights Reserved | This application is made with ❤️ by TNT',
-            style: TextStyle(color: Colors.white54, fontSize: 12),
-            textAlign: TextAlign.center,
-          ),
-        ],
+      child: SafeArea(
+      top: false,
+        child: SingleChildScrollView(
+          child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _buildAboutSection(),
+                const SizedBox(width: 16),
+                _buildListSection(
+                  title: 'Menu',
+                  items: ['Giới thiệu', 'Dịch vụ', 'Tin tức', 'Nghề nghiệp'],
+                ),
+                const SizedBox(width: 16),
+                _buildListSection(
+                  title: 'Danh mục',
+                  items: ['Full Time', 'Freelance', 'Temporary', 'Internship'],
+                ),
+              ],
+            ),
+            const Divider(color: Colors.white38, height: 32),
+            const Text(
+              'Copyright © 2024 All Rights Reserved | This application is made with love by Yuki',
+              style: TextStyle(color: Colors.white54, fontSize: 12),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
       ),
     );
   }
@@ -46,13 +51,16 @@ class CustomFooter extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'About',
+            'Về chúng tôi',
             style: PrimaryText.primaryTextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
           const Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Repellat quos rem ullam, placeat amet.',
+            'Chúng tôi là một nền tảng kết nối giữa nhà tuyển dụng và người tìm việc, mang đến giải pháp tuyển dụng nhanh chóng, hiệu quả và đáng tin cậy.'
+            'Với sứ mệnh hỗ trợ hàng nghìn người tìm được công việc mơ ước, chúng tôi không ngừng đổi mới và cải tiến để mang lại trải nghiệm tốt nhất cho người dùng.',
             style: TextStyle(color: Colors.white70, fontSize: 14),
+            textAlign: TextAlign.justify, 
+            softWrap: true,
           ),
           const SizedBox(height: 12),
           ElevatedButton(
