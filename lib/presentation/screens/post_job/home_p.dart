@@ -71,14 +71,14 @@ class EmployerHomePage extends StatelessWidget {
       child: Column(
         children: [
           _benefitItem("assets/images/icon1.png", "Nguồn ứng viên chất lượng",
-              "Nhà tuyển dụng có thể tiếp cận nguồn ứng viên dồi dào với hơn 10 triệu hồ sơ và hơn 50 triệu lượt truy cập mỗi năm"),
+              "Nhà tuyển dụng có thể tiếp cận nguồn ứng viên dồi dào với hơn 5 triệu hồ sơ và hơn 30 triệu lượt truy cập mỗi năm"),
           _benefitItem("assets/images/icon2.png", "Trải nghiệm toàn diện",
               "Tài khoản nhà tuyển dụng được tích hợp thêm các tính năng thông minh, giúp thuận tiện quản lý tin đăng, quản lý hồ sơ và theo dõi ứng viên, và lượng nộp đơn"),
           _benefitItem("assets/images/icon3.png", "Chi phí hợp lý",
-              "Đặc quyền 12++ tin đăng miễn phí mỗi năm giúp nhà tuyển dụng tối ưu chi phí & quy trình tuyển dụng"),
+              "Đặc quyền 20++ tin đăng miễn phí mỗi năm giúp nhà tuyển dụng tối ưu chi phí & quy trình tuyển dụng"),
           _benefitItem("assets/images/icon4.png",
               "Chất lượng CSKH chuyên nghiệp",
-              "Đội ngũ CSKH giờ tập trung cho JobPath.vn, chuyên nghiệp hơn & tận tình hơn, nhằm mang lại trải nghiệm tốt nhất và hiệu quả tối đa"),
+              "Đội ngũ CSKH giờ tập trung cho JobNest.vn, chuyên nghiệp hơn & tận tình hơn, nhằm mang lại trải nghiệm tốt nhất và hiệu quả tối đa"),
         ],
       ),
     );
@@ -113,7 +113,7 @@ class EmployerHomePage extends StatelessWidget {
     );
   }
 
-  // 🔹 Kiến thức hữu ích
+  // Kiến thức hữu ích
   Widget _buildKnowledgeSection() {
     return Padding(
       padding: const EdgeInsets.all(16.0),
@@ -172,9 +172,9 @@ class EmployerHomePage extends StatelessWidget {
                 style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 10),
-              _hotlineCard("Hotline hỗ trợ miền Nam", "HCM: (028) 7108 2424"),
+              _hotlineCard("Hotline hỗ trợ miền Nam", "HCM: (028) 7877 2424"),
               SizedBox(height: 10),
-              _hotlineCard("Hotline hỗ trợ miền Bắc", "HN: (024) 7308 2424"),
+              _hotlineCard("Hotline hỗ trợ miền Bắc", "HN: (024) 3931 2424"),
               SizedBox(height: 20),
                           ],
           ),
@@ -185,7 +185,7 @@ class EmployerHomePage extends StatelessWidget {
           children: [
               SizedBox(height: 20),
             _consultationCard("Quản lý đăng tuyển",
-                  "Với thư viện chuẩn của hơn 1000+ mô tả công việc gợi ý cho nhà tuyển dụng với các ngành nghề và vị trí khác nhau"),
+                  "Với thư viện chuẩn của hơn 10000+ mô tả công việc gợi ý cho nhà tuyển dụng với các ngành nghề và vị trí khác nhau"),
               _consultationCard("Quản lý ứng viên",
                   "Với công cụ quản lý tích hợp, báo cáo trực quan, dễ sử dụng và theo dõi kho hồ sơ ứng viên theo từng vị trí đăng tuyển"),
               _consultationCard("Quảng cáo đa nền tảng",

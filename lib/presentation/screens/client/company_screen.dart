@@ -133,10 +133,10 @@ class _CompanyScreenState extends State<CompanyScreen> {
                           ),
               ),
               const SizedBox(height: 30),
-              SizedBox(
-                height: 330,
-                child: CustomFooter(),
-              ),
+              // SizedBox(
+              //   height: 330,
+              //   child: CustomFooter(),
+              // ),
             ],
           ),
         ),

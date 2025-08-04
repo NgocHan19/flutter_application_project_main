@@ -8,6 +8,7 @@ class CustomFooter extends StatelessWidget {
     return Container(
       color: const Color.fromARGB(255, 18, 17, 17),
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+      constraints: const BoxConstraints(minHeight: 500),
       child: SafeArea(
       top: false,
         child: SingleChildScrollView(
@@ -56,8 +57,7 @@ class CustomFooter extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           const Text(
-            'Chúng tôi là một nền tảng kết nối giữa nhà tuyển dụng và người tìm việc, mang đến giải pháp tuyển dụng nhanh chóng, hiệu quả và đáng tin cậy.'
-            'Với sứ mệnh hỗ trợ hàng nghìn người tìm được công việc mơ ước, chúng tôi không ngừng đổi mới và cải tiến để mang lại trải nghiệm tốt nhất cho người dùng.',
+            'Chúng tôi là nền tảng kết nối nhà tuyển dụng và người tìm việc, mang đến giải pháp tuyển dụng nhanh, hiệu quả và đáng tin cậy. Với sứ mệnh giúp hàng nghìn người tìm được công việc mơ ước, chúng tôi luôn nỗ lực cải tiến để nâng cao trải nghiệm người dùng.',
             style: TextStyle(color: Colors.white70, fontSize: 14),
             textAlign: TextAlign.justify, 
             softWrap: true,

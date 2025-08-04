@@ -65,10 +65,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ..._buildFadeItems(),
               _buildDreamJobSection(),
               _buildBlogRecent(),
-              SizedBox(
-                height: 330,
-                child: CustomFooter(),
-              ),
+              // SizedBox(
+              //   height: 330,
+              //   child: CustomFooter(),
+              // ),
             ],
           ),
         ),

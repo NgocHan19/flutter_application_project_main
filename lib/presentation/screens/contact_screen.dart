@@ -126,10 +126,10 @@ class _ContactScreenState extends State<ContactScreen> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 330,
-              child: CustomFooter(),
-            ),
+            // SizedBox(
+            //   height: 330,
+            //   child: CustomFooter(),
+            // ),
           ],
         ),
       ),

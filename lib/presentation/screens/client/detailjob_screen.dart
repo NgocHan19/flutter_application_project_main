@@ -76,10 +76,10 @@ class _DetailJobScreenState extends State<DetailJobScreen> {
           ),
         ),
       ),
-      SizedBox(
-        height: 330,
-         child: CustomFooter(),
-      ),
+      // SizedBox(
+      //   height: 330,
+      //    child: CustomFooter(),
+      // ),
         ]
       )
       )

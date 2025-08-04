@@ -57,10 +57,10 @@ class _BlogDetailState extends State<BlogDetail> {
                 ]
               )
             ),
-            SizedBox(
-              height: 330,
-              child: CustomFooter(),
-            ),
+            // SizedBox(
+            //   height: 330,
+            //   child: CustomFooter(),
+            // ),
           ],
         ),
       ),

@@ -73,7 +73,7 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
 
       if (response.statusCode == 200) {
         _showSnackbar(
-            'Profile created successfully!', Icons.check_circle, Colors.green);
+            'Tạo hồ sơ thành công!', Icons.check_circle, Colors.green);
       } else {
         _showSnackbar('Failed to create profile.', Icons.error, Colors.red);
       }
