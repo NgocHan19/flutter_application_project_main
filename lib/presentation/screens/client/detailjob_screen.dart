@@ -281,7 +281,7 @@ Widget _buildAboutUsHeader() {
                     child: Ink(
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [Colors.blue, const Color.fromARGB(255, 184, 129, 204)],
+                          colors: [const Color.fromARGB(255, 250, 94, 59), const Color.fromARGB(255, 227, 136, 106)],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ),

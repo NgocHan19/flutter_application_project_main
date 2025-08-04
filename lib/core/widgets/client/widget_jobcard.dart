@@ -28,7 +28,7 @@ class _JobCardState extends State<JobCard> {
   Future<void> fetchJobs() async {
     try {
       final response = await http
-          .get(Uri.parse('https://backend-findjob.onrender.com/job/'));
+          .get(Uri.parse('https://backend-jobnest.onrender.com/job/'));
 
       if (response.statusCode == 200) {
         final List<dynamic> decodedJobs = jsonDecode(response.body);
