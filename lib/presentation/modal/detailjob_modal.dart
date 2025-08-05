@@ -148,27 +148,48 @@ class _ModalDetailScreenState extends State<ModalDetailScreen> {
     );
   }
 
-  Future<void> _pickFile() async {
-    var status = await Permission.storage.status;
+  // Future<void> _pickFile() async {
+  //   var status = await Permission.storage.status;
 
-    if (!status.isGranted) {
-      await Permission.storage.request();
-    }
+  //   if (!status.isGranted) {
+  //     await Permission.storage.request();
+  //   }
 
+  //   FilePickerResult? result = await FilePicker.platform.pickFiles(
+  //     type: FileType.custom,
+  //     allowedExtensions: ['pdf'],
+  //     allowMultiple: false,
+  //   );
+
+  //   if (result != null) {
+  //     setState(() {
+  //       selectedFile = File(result.files.single.path!);
+  //     });
+  //   } else {
+  //     _showErrorDialog('Không chọn được file.');
+  //   }
+  // }
+
+Future<void> _pickFile() async {
+  try {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['pdf'],
       allowMultiple: false,
     );
 
-    if (result != null) {
+    if (result != null && result.files.single.path != null) {
       setState(() {
         selectedFile = File(result.files.single.path!);
       });
     } else {
       _showErrorDialog('Không chọn được file.');
     }
+  } catch (e) {
+    _showErrorDialog('Đã xảy ra lỗi khi chọn file: $e');
   }
+}
+
 
   @override
   Widget build(BuildContext context) {
